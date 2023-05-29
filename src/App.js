@@ -7,6 +7,8 @@ import Crouselll from './films/Crouselll';
 import MovieList from './films/MovieList';
 import { useState } from 'react';
 import Caroucel from './films/Caroucel';
+import { Route, Routes } from 'react-router-dom';
+import Trailer from './films/Trailer';
 
 
 
@@ -18,6 +20,8 @@ function App() {
     description:
       "As civil war rages in Africa, a fierce warlord (Idris Elba) trains a young orphan (Abraham Attah) to join his group of guerrilla soldiers.",
     rating: 5,
+    video:"https://www.youtube.com/embed/2xb9Ty-1frw",
+  
   },
   {
     name: "13 hours in benghazi",
@@ -26,6 +30,7 @@ function App() {
     description:
       "A security team consisting of six members fights to defend an American diplomatic compound in Benghazi, Libya, against a wave of terrorist attacks.",
     rating: 4,
+    video:"https://www.youtube.com/embed/uTKacYwfE7Y" 
   },
   {
     name: "The Circle",
@@ -117,18 +122,30 @@ function App() {
     rating: 5,
   },
   ]);
-  const [text, settext] = useState("");
+  const [text, settext] = useState("") ;
   const [rate, setrate] = useState(0);
   return (
     <div> 
       <Navvbarr settext={settext} setrate={setrate}/>
-      <Crouselll/> 
+      <Crouselll/>
       <Caroucel/>
-      <MovieList movies={movies}
+      <Routes>
+        <Route path="/" element={ 
+        <MovieList 
+        movies={movies}
        setmovies={setmovies} 
        text={text}
-       rate={rate} />
+       rate={rate} />} 
+       />
+        <Route path="/aboutus" element={ <Crouselll/> } />
+        <Route path="/contactus" element={ <Caroucel/> } />
+        <Route path="/trailer/:name" element={ <Trailer movies={movies} /> } />
+      </Routes>
+
+    
+     
     </div>
+
   );
 }
 

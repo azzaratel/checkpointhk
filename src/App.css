@@ -5,11 +5,23 @@
   min-height: 500px;
   text-align: center;
 }
+.ratee{
+  margin-left:  600px;
+}
+.texxt{
+  max-width: 250px;
+  min-width: 250px;
+  max-height: 250px;
+  min-height: 250px;
+}
+.immg{
+  max-width:285px;
+  min-width: 285px;
+  max-height: 250px;
+  min-width: 250px;
+}
 .container-cards{
   background-color: black;
-  width:280px;
-  margin: 20px;
-  height: 400px;
 }
 .add{
   display: flex;
@@ -28,9 +40,11 @@ h1 {
   color: palevioletred;
 }
 .container{
+  width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap ;
+  
 
 }
 

@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 
 function Navvbarr({settext , setrate}) {
@@ -20,17 +21,11 @@ function Navvbarr({settext , setrate}) {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1" className='nav-h'>Home</Nav.Link>
-          <NavDropdown title="Tv shows" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3" className='nav-h'>Dramas</NavDropdown.Item>
-            <NavDropdown.Item href="#action4" className='nav-h'> Horror </NavDropdown.Item>
+          <Nav.Link href="#action1" > <Link style={{textDecoration:"none",color:"white"}} to="/"> Movies</Link></Nav.Link>
+          <Nav.Link href="#action1"  > <Link style={{textDecoration:"none",color:"white"}} to="/contactus">Contact</Link> </Nav.Link>
+          <Nav.Link href="#action1" > <Link style={{textDecoration:"none",color:"white"}} to="/aboutus"> About</Link></Nav.Link>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5" className='nav-h'>Reality & Talk</NavDropdown.Item> </NavDropdown>
-          <NavDropdown title="Movies" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3" className='nav-h'>Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4" className='nav-h'> Anime </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5" className='nav-h'>Crime</NavDropdown.Item> </NavDropdown>
+            
         </Nav>
         <ReactStars
     count={5}
